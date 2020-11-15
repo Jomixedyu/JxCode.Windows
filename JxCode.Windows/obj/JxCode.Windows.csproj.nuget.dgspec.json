@@ -1,0 +1,53 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj": {}
+  },
+  "projects": {
+    "F:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj",
+        "projectName": "JxCode.Windows",
+        "projectPath": "F:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj",
+        "packagesPath": "C:\\Users\\Jayshonyves\\.nuget\\packages\\",
+        "outputPath": "F:\\JxCode.Windows\\JxCode.Windows\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\Jayshonyves\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net40",
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net40": {
+            "projectReferences": {}
+          },
+          "net45": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net40": {
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        },
+        "net45": {
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

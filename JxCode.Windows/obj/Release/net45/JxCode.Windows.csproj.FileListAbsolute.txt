@@ -1,0 +1,8 @@
+E:\Jxcode\JxCode.Windows\JxCode.Windows\bin\Release\net45\JxCode.Windows.dll
+E:\Jxcode\JxCode.Windows\JxCode.Windows\bin\Release\net45\JxCode.Windows.pdb
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Release\net45\JxCode.Windows.csproj.CoreCompileInputs.cache
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Release\net45\JxCode.Windows.AssemblyInfoInputs.cache
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Release\net45\JxCode.Windows.AssemblyInfo.cs
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Release\net45\JxCode.Windows.dll
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Release\net45\JxCode.Windows.pdb
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Release\net45\JxCode.Windows.csprojAssemblyReference.cache

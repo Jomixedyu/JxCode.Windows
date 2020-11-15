@@ -1,0 +1,16 @@
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\bin\Debug\net40\JxCode.Windows.dll
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\bin\Debug\net40\JxCode.Windows.pdb
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\obj\Debug\net40\JxCode.Windows.csprojAssemblyReference.cache
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\obj\Debug\net40\JxCode.Windows.csproj.CoreCompileInputs.cache
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\obj\Debug\net40\JxCode.Windows.AssemblyInfoInputs.cache
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\obj\Debug\net40\JxCode.Windows.AssemblyInfo.cs
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\obj\Debug\net40\JxCode.Windows.dll
+E:\JxCode\JxCode.Windows\Project\JxCode.Windows\obj\Debug\net40\JxCode.Windows.pdb
+E:\Jxcode\JxCode.Windows\JxCode.Windows\bin\Debug\net40\JxCode.Windows.dll
+E:\Jxcode\JxCode.Windows\JxCode.Windows\bin\Debug\net40\JxCode.Windows.pdb
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net40\JxCode.Windows.csproj.CoreCompileInputs.cache
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net40\JxCode.Windows.AssemblyInfoInputs.cache
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net40\JxCode.Windows.AssemblyInfo.cs
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net40\JxCode.Windows.dll
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net40\JxCode.Windows.pdb
+E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net40\JxCode.Windows.csprojAssemblyReference.cache

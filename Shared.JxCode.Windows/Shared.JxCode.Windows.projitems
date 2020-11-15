@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>12ce725d-57fc-4bd3-b1d5-6c749211dc23</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>JxCode.Windows</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)FileDialog.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\Kernel32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\Keys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\MouseEventType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\Shell32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\SysCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\WindowsMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\WindowStyle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\Winmm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Hook.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IniHelper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)KeyboardUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MCIPlayer.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MessageBox.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MouseUtil.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)NotifyIcon.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SoftUtility\JavaInfo.cs" />
+    <Compile Include="..\Shared.JxCode.Windows\WindowForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ProcessHandle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RegeditConfiguration.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)App.cs" />
+  </ItemGroup>
+</Project>
