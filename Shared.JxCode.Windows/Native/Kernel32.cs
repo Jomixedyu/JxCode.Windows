@@ -14,5 +14,7 @@ namespace JxCode.Windows.Native
 
         [DllImport(DLL_NAME, EntryPoint = "GetModuleHandle")]
         public static extern IntPtr GetModuleHandle(string name);
+        [DllImport(DLL_NAME, EntryPoint = "GetCurrentThreadId")]
+        private static extern int GetCurrentThreadId();
     }
 }
