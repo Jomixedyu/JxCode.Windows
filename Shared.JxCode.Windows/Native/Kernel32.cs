@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Runtime.InteropServices;
 
 namespace JxCode.Windows.Native
@@ -10,5 +11,8 @@ namespace JxCode.Windows.Native
         public static extern int GetPrivateProfileString(string section, string key, string def, byte[] retVal, int size, string filePath);
         [DllImport(DLL_NAME, EntryPoint = "WritePrivateProfileString")]
         public static extern int WritePrivateProfileString(string section, string key, string val, string filePath);
+
+        [DllImport(DLL_NAME, EntryPoint = "GetModuleHandle")]
+        public static extern IntPtr GetModuleHandle(string name);
     }
 }

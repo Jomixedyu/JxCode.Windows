@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj",
+      "projectUniqueName": "E:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj",
       "projectName": "JxCode.Windows",
-      "projectPath": "F:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj",
+      "projectPath": "E:\\JxCode.Windows\\JxCode.Windows\\JxCode.Windows.csproj",
       "packagesPath": "C:\\Users\\Jayshonyves\\.nuget\\packages\\",
-      "outputPath": "F:\\JxCode.Windows\\JxCode.Windows\\obj\\",
+      "outputPath": "E:\\JxCode.Windows\\JxCode.Windows\\obj\\",
       "projectStyle": "PackageReference",
       "crossTargeting": true,
       "configFilePaths": [
@@ -36,9 +36,11 @@
       },
       "frameworks": {
         "net40": {
+          "targetAlias": "net40",
           "projectReferences": {}
         },
         "net45": {
+          "targetAlias": "net45",
           "projectReferences": {}
         }
       },
@@ -50,10 +52,12 @@
     },
     "frameworks": {
       "net40": {
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "targetAlias": "net40",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       },
       "net45": {
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        "targetAlias": "net45",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

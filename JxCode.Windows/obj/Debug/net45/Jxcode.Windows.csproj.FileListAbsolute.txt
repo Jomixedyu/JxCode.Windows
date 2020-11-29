@@ -14,3 +14,11 @@ E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.AssemblyI
 E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.AssemblyInfo.cs
 E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.dll
 E:\Jxcode\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.pdb
+E:\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.csprojAssemblyReference.cache
+E:\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.AssemblyInfoInputs.cache
+E:\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.AssemblyInfo.cs
+E:\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.csproj.CoreCompileInputs.cache
+E:\JxCode.Windows\JxCode.Windows\bin\Debug\net45\JxCode.Windows.dll
+E:\JxCode.Windows\JxCode.Windows\bin\Debug\net45\JxCode.Windows.pdb
+E:\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.dll
+E:\JxCode.Windows\JxCode.Windows\obj\Debug\net45\JxCode.Windows.pdb
