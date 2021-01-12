@@ -172,5 +172,17 @@ namespace JxCode.Windows.Native
 
         //[DllImport(DLL_NAME, EntryPoint = "EnumDisplaySettings")]
         //public static extern bool EnumDisplaySettings(string lpszDeviceName, uint iModeNum, lpDevMode);
+
+        public delegate IntPtr WindowLongCallBack(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+        [DllImport(DLL_NAME, EntryPoint = "GetWindowLong")]
+        public extern static IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
+        [DllImport(DLL_NAME, EntryPoint = "GetWindowLong")]
+        public extern static IntPtr GetWindowLong(IntPtr hWnd, WindowsLongMessage nIndex);
+        [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
+        public extern static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, WindowLongCallBack wndProc);
+        [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
+        public extern static IntPtr SetWindowLong(IntPtr hWnd, WindowsLongMessage nIndex, WindowLongCallBack wndProc);
+        [DllImport(DLL_NAME, EntryPoint = "CallWindowProc")]
+        public extern static IntPtr CallWindowProc(IntPtr wndProc, IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
     }
 }

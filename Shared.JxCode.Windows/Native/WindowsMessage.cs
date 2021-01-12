@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JxCode.Windows.Native
 {
-    public enum WindowsMessage:int
+    public enum WindowsMessage : int
     {
         /// <summary>
         ///
@@ -829,4 +829,21 @@ namespace JxCode.Windows.Native
         /// </summary>
         WM_THEMECHNAGED = 0x31A
     }
+    public enum WindowsActiveMessage : int
+    {
+        WA_INACTIVE = 0,
+        WA_ACTIVE = 1,
+        WA_CLICKACTIVE = 2,
+    }
+    public enum WindowsLongMessage : int
+    {
+        GWL_WNDPROC = -4,
+        GWL_HINSTANCE = -6,
+        GWL_HWNDPARENT = -8,
+        GWL_STYLE = -16,
+        GWL_EXSTYLE = -20,
+        GWL_USERDATA = -21,
+        GWL_ID = -12,
+    }
+
 }
