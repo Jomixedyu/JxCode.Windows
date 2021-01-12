@@ -9,8 +9,9 @@ namespace JxCode.Windows
     public class Hook : IDisposable
     {
         private IntPtr m_kbdHook = IntPtr.Zero;
-        private User32.HookProc m_kbdHookProcedure;
         public event Action<Keys> keyMsg;
+        User32.HookProc hookProcCallBack;
+
         public void Dispose()
         {
             if (this.m_kbdHook == IntPtr.Zero)
@@ -18,21 +19,22 @@ namespace JxCode.Windows
 
             User32.UnhookWindowsHookEx(this.m_kbdHook);
             this.m_kbdHook = IntPtr.Zero;
-
         }
         private int HookProc(int nCode, int wParam, IntPtr lParam)
         {
-            keyMsg.Invoke((Keys)nCode);
-            return User32.CallNextHookEx(IntPtr.Zero, nCode, wParam, lParam);
+            Console.WriteLine("+++");
+
+            this.keyMsg.Invoke((Keys)nCode);
+            return User32.CallNextHookEx(m_kbdHook, nCode, wParam, lParam);
         }
         public void Start()
         {
-            if (this.m_kbdHook == IntPtr.Zero)
+            if (this.m_kbdHook != IntPtr.Zero)
                 return;
-
-            this.m_kbdHookProcedure = this.HookProc;
-            IntPtr moduleHandle = Kernel32.GetModuleHandle(Process.GetCurrentProcess().MainModule.ModuleName);
-            this.m_kbdHook = User32.SetWindowsHookEx(13, m_kbdHookProcedure, moduleHandle, 0);
+            this.hookProcCallBack = new User32.HookProc(this.HookProc);
+            string moduleName = Process.GetCurrentProcess().MainModule.ModuleName;
+            IntPtr moduleHandle = Kernel32.GetModuleHandle(moduleName);
+            this.m_kbdHook = User32.SetWindowsHookEx(13, this.hookProcCallBack, moduleHandle, 0);
         }
     }
 }
