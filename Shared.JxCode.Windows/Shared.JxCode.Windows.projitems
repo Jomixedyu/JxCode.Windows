@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)MouseUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NotifyIcon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SoftUtility\JavaInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WinformMessageProc.cs" />
     <Compile Include="..\Shared.JxCode.Windows\WindowForm.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProcessHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RegeditConfiguration.cs" />
