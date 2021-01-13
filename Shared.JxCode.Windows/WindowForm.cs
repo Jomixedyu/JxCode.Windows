@@ -229,7 +229,7 @@ namespace JxCode.Windows
         /// 从当前程序的窗体创建
         /// </summary>
         /// <returns></returns>
-        public static WindowForm CreateFromCurrent()
+        public static WindowForm CreateFromCurrentPid()
         {
             IntPtr PID = new IntPtr(System.Diagnostics.Process.GetCurrentProcess().Id);
             return CreateFromPID(PID);
