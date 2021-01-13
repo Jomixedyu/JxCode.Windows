@@ -1,20 +1,8 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net40;net45</TargetFrameworks>
+    <TargetFrameworks>net40</TargetFrameworks>
     <Platforms>AnyCPU;x86;x64</Platforms>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|AnyCPU'">
-    <OutputPath>..\..\Release</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|x64'">
-    <OutputPath>..\..\Release</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net40|x86'">
-    <OutputPath>..\..\Release</OutputPath>
   </PropertyGroup>
 
   <Import Project="..\Shared.JxCode.Windows\Shared.JxCode.Windows.projitems" Label="Shared" />
