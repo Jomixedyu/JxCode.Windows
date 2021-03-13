@@ -20,7 +20,7 @@ namespace JxCode.Windows
                 nid.szTip = ToCharArray(value);
                 if (isEnable)
                 {
-                    Shell32.Shell_NotifyIconW(Shell32.NotityMessage.NIM_MODIFY, nid);
+                    Shell32.Shell_NotifyIconW(Shell32.NIM_NotityMessage.NIM_MODIFY, nid);
                 }
             }
         }
@@ -38,21 +38,21 @@ namespace JxCode.Windows
                 hIcon = icon,
                 hWnd = hWnd,
                 szTip = ToCharArray(Text),
-                uFlags = Shell32.NotifyFlag.NIF_ICON 
-                        | Shell32.NotifyFlag.NIF_TIP 
-                        | Shell32.NotifyFlag.NIF_MESSAGE,
-                uCallbackMessage = (uint)WindowsMessage.WM_PASTE ,
+                uFlags = Shell32.NIF_NotifyFlag.NIF_ICON 
+                        | Shell32.NIF_NotifyFlag.NIF_TIP 
+                        | Shell32.NIF_NotifyFlag.NIF_MESSAGE,
+                uCallbackMessage = (uint)User32.WM_WindowsMessage.WM_PASTE ,
             };
         }
 
         public void Enable()
         {
-            Shell32.Shell_NotifyIconW(Shell32.NotityMessage.NIM_ADD, this.nid);
+            Shell32.Shell_NotifyIconW(Shell32.NIM_NotityMessage.NIM_ADD, this.nid);
             isEnable = true;
         }
         public void Disable()
         {
-            Shell32.Shell_NotifyIconW(Shell32.NotityMessage.NIM_DELETE, this.nid);
+            Shell32.Shell_NotifyIconW(Shell32.NIM_NotityMessage.NIM_DELETE, this.nid);
             isEnable = false;
         }
         //定长字符数组

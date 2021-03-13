@@ -4,14 +4,14 @@ using System.Text;
 
 namespace JxCode.Windows.Native
 {
-    public static class User32
+    public static partial class User32
     {
         private const string DLL_NAME = "user32.dll";
-        public delegate bool EnumWindowsCallBack(IntPtr hwnd, IntPtr lParam);
+        public delegate bool WNDENUMPROC(IntPtr hwnd, IntPtr lParam);
         [DllImport(DLL_NAME, EntryPoint = "SetWindowText", CharSet = CharSet.Unicode)]
         public static extern bool SetWindowText(IntPtr hwnd, string title);
         [DllImport(DLL_NAME, EntryPoint = "EnumWindows")]
-        public static extern int EnumWindows(EnumWindowsCallBack lpEnumFunc, IntPtr lParam);
+        public static extern int EnumWindows(WNDENUMPROC lpEnumFunc, IntPtr lParam);
         [DllImport(DLL_NAME, EntryPoint = "GetWindowThreadProcessId")]
         public static extern uint GetWindowThreadProcessId(IntPtr hWnd, ref IntPtr lpdwProcessId);
         [DllImport(DLL_NAME, EntryPoint = "CloseWindow")]
@@ -24,17 +24,17 @@ namespace JxCode.Windows.Native
         [DllImport(DLL_NAME, EntryPoint = "SendMessage")]
         public static extern int SendMessage(IntPtr hWnd, uint wMsg, uint wParam, uint lParam);
         [DllImport(DLL_NAME, EntryPoint = "SendMessage")]
-        public static extern int SendMessage(IntPtr hWnd, WindowsMessage wMsg, uint wParam, uint lParam);
-        public static int SendMessage(IntPtr hWnd, WindowsMessage wMsg, SysCommand wParam)
+        public static extern int SendMessage(IntPtr hWnd, WM_WindowsMessage wMsg, uint wParam, uint lParam);
+        public static int SendMessage(IntPtr hWnd, WM_WindowsMessage wMsg, SC_SysCommand wParam)
         {
             return SendMessage(hWnd, wMsg, (uint)wParam, 0);
         }
         [DllImport(DLL_NAME, EntryPoint = "SendMessage")]
-        public static extern int SendMessage(IntPtr hWnd, WindowsMessage wMsg, uint wParam, string lParam);
+        public static extern int SendMessage(IntPtr hWnd, WM_WindowsMessage wMsg, uint wParam, string lParam);
         [DllImport(DLL_NAME, EntryPoint = "SendMessage")]
-        public static extern int SendMessage(IntPtr hWnd, WindowsMessage wMsg, IntPtr wParam, string lParam);
+        public static extern int SendMessage(IntPtr hWnd, WM_WindowsMessage wMsg, IntPtr wParam, string lParam);
         [DllImport(DLL_NAME, EntryPoint = "SendMessage")]
-        public static extern int SendMessage(IntPtr hWnd, WindowsMessage wMsg, IntPtr wParam, IntPtr lParam);
+        public static extern int SendMessage(IntPtr hWnd, WM_WindowsMessage wMsg, IntPtr wParam, IntPtr lParam);
 
         [DllImport(DLL_NAME, EntryPoint = "FindWindow")]
         public static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
@@ -58,7 +58,7 @@ namespace JxCode.Windows.Native
             public int Bottom;
         }
         [DllImport(DLL_NAME, EntryPoint = "keybd_event")]
-        public static extern void keybd_event(Keys bVk, byte bScan, KeyEvent dwFlags, uint dwExtraInfo);
+        public static extern void keybd_event(VK_Keys bVk, byte bScan, KeyEvent dwFlags, uint dwExtraInfo);
         public enum KeyEvent
         {
             down = 0,
@@ -73,7 +73,7 @@ namespace JxCode.Windows.Native
         /// <param name="dwData">仅dwFlags为MOUSEEVENTF_WHEEL，则dwData指定鼠标轮移动的数量。正值表明鼠标轮向前转动，即远离用户的方向</param>
         /// <param name="dwExtraInfo">应用程序调用函数GetMessageExtraInfo来获得此附加信息</param>
         [DllImport(DLL_NAME, EntryPoint = "mouse_event")]
-        public static extern void mouse_event(MouseEventType dwFlags, int dx = 0, int dy = 0, int dwData = 0, ulong dwExtraInfo = 0);
+        public static extern void mouse_event(MOUSEEVENTF_MouseEventType dwFlags, int dx = 0, int dy = 0, int dwData = 0, ulong dwExtraInfo = 0);
         [DllImport(DLL_NAME, EntryPoint = "GetCursorPos")]
         public static extern bool GetCursorPos(ref Point point);
         [DllImport(DLL_NAME, EntryPoint = "SetCursorPos")]
@@ -106,7 +106,7 @@ namespace JxCode.Windows.Native
             {
                 return string.Format("{{x:{0}, y:{1}}}", x.ToString(), y.ToString());
             }
-            public static bool operator == (Point a, Point b)
+            public static bool operator ==(Point a, Point b)
             {
                 return a.Equals(b);
             }
@@ -134,6 +134,7 @@ namespace JxCode.Windows.Native
 
         [DllImport(DLL_NAME, EntryPoint = "GetWindowText")]
         public static extern int GetWindowText(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
+
         [DllImport(DLL_NAME, EntryPoint = "GetClassName")]
         public static extern int GetClassName(IntPtr hWnd, StringBuilder lpString, int nMaxCount);
 
@@ -177,12 +178,38 @@ namespace JxCode.Windows.Native
         [DllImport(DLL_NAME, EntryPoint = "GetWindowLong")]
         public extern static IntPtr GetWindowLong(IntPtr hWnd, int nIndex);
         [DllImport(DLL_NAME, EntryPoint = "GetWindowLong")]
-        public extern static IntPtr GetWindowLong(IntPtr hWnd, WindowsLongMessage nIndex);
+        public extern static IntPtr GetWindowLong(IntPtr hWnd, GWL_WindowsLongMessage nIndex);
         [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
         public extern static IntPtr SetWindowLong(IntPtr hWnd, int nIndex, WindowLongCallBack wndProc);
         [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
-        public extern static IntPtr SetWindowLong(IntPtr hWnd, WindowsLongMessage nIndex, WindowLongCallBack wndProc);
+        public extern static IntPtr SetWindowLong(IntPtr hWnd, GWL_WindowsLongMessage nIndex, WindowLongCallBack wndProc);
+        [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
+        public extern static IntPtr SetWindowLong(IntPtr hWnd, GWL_WindowsLongMessage nIndex, uint dwNewLong);
+        [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
+        public extern static IntPtr SetWindowLong(IntPtr hWnd, GWL_WindowsLongMessage nIndex, IntPtr dwNewLong);
+        [DllImport(DLL_NAME, EntryPoint = "SetWindowLong")]
+        public extern static IntPtr SetWindowLong(IntPtr hWnd, GWL_WindowsLongMessage nIndex, WS_WindowStyle dwNewLong);
         [DllImport(DLL_NAME, EntryPoint = "CallWindowProc")]
         public extern static IntPtr CallWindowProc(IntPtr wndProc, IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+
+        [DllImport(DLL_NAME, EntryPoint = "GetWindow")]
+        public extern static IntPtr GetWindow(IntPtr hWnd, GW_GetWindow wCmd);
+
+        [DllImport(DLL_NAME, EntryPoint = "GetActiveWindow")]
+        public extern static IntPtr GetActiveWindow();
+
+        [DllImport(DLL_NAME, EntryPoint = "EnumChildWindows")]
+        public static extern int EnumChildWindows(IntPtr hWndParent, WNDENUMPROC lpfn, int lParam);
+        [DllImport(DLL_NAME, EntryPoint = "SendMessageTimeout")]
+        public static extern int SendMessageTimeout(
+            IntPtr hWnd,
+            uint Msg,
+            uint wParam,
+            IntPtr lParam,
+            uint fuFlags,
+            uint uTimeout,
+            IntPtr outOpt_lpdwResult);
+
+
     }
 }

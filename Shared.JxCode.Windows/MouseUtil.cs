@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using JxCode.Windows.Native;
+﻿using JxCode.Windows.Native;
+using MouseEventType = JxCode.Windows.Native.User32.MOUSEEVENTF_MouseEventType;
 
 namespace JxCode.Windows
 {
@@ -10,7 +8,6 @@ namespace JxCode.Windows
     /// </summary>
     public static class MouseUtil
     {
-
         public static void SetCursorPosition(int x , int y)
         {
             User32.SetCursorPos(x, y);

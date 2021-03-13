@@ -1,10 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Reflection.Emit;
 using System.Text;
-using System.Threading;
 using JxCode.Windows.Native;
+using WindowStyle = JxCode.Windows.Native.User32.WS_WindowStyle;
 
 namespace JxCode.Windows
 {

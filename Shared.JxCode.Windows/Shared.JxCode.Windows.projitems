@@ -11,13 +11,17 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)FileDialog.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Native\Kernel32.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Native\Keys.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Native\MouseEventType.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\GWL_WindowsLongMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\GW_GetWindow.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\VK_Keys.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\MOUSEEVENTF_MouseEventType.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Native\Shell32.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Native\SysCommand.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\SC_SysCommand.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Native\User32.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Native\WindowsMessage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Native\WindowStyle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\WA_WindowsActiveMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\WM_WindowsMessage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\WSEX_ExtendedWindowStyle.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\WS_WindowStyle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Native\Winmm.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Hook.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IniHelper.cs" />
@@ -28,7 +32,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)NotifyIcon.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)SoftUtility\JavaInfo.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)WinformMessageProc.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)WindowForm.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)WindowsForm.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ProcessHandle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RegeditConfiguration.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)App.cs" />

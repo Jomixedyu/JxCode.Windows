@@ -9,7 +9,7 @@ namespace JxCode.Windows
     public class Hook : IDisposable
     {
         private IntPtr m_kbdHook = IntPtr.Zero;
-        public event Action<Keys> keyMsg;
+        public event Action<User32.VK_Keys> keyMsg;
         User32.HookProc hookProcCallBack;
 
         public void Dispose()
@@ -24,7 +24,7 @@ namespace JxCode.Windows
         {
             Console.WriteLine("+++");
 
-            this.keyMsg.Invoke((Keys)nCode);
+            this.keyMsg.Invoke((User32.VK_Keys)nCode);
             return User32.CallNextHookEx(m_kbdHook, nCode, wParam, lParam);
         }
         public void Start()

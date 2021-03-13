@@ -1,12 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
+
+using JxCode.Windows.Native;
+using System.Runtime.InteropServices;
+
+using WindowsLongMessage = JxCode.Windows.Native.User32.GWL_WindowsLongMessage;
+using WindowsMessage = JxCode.Windows.Native.User32.WM_WindowsMessage;
+using WindowsActiveMessage = JxCode.Windows.Native.User32.WA_WindowsActiveMessage;
 
 namespace JxCode.Windows
 {
-    using Native;
-    using System.Runtime.InteropServices;
-
     public interface IWinformMessageProc
     {
         /// <summary>

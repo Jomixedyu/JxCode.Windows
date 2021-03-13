@@ -12,9 +12,9 @@ namespace JxCode.Windows.Native
         [DllImport(DLL_NAME, EntryPoint = "ExtractIcon", CharSet = CharSet.Unicode)]
         public static extern IntPtr ExtractIcon(int hInst, string lpszExeFileName, int nIconIndex);
         [DllImport(DLL_NAME, EntryPoint = "Shell_NotifyIconW", CharSet = CharSet.Unicode)]
-        public static extern bool Shell_NotifyIconW(NotityMessage dwMessage, NotifyIconData lpdata);
+        public static extern bool Shell_NotifyIconW(NIM_NotityMessage dwMessage, NotifyIconData lpdata);
 
-        public enum NotityMessage
+        public enum NIM_NotityMessage
         {
             NIM_ADD        = 0x00000000,
             NIM_MODIFY     = 0x00000001,
@@ -22,7 +22,7 @@ namespace JxCode.Windows.Native
             NIM_SETFOCUS   = 0x00000003,
             NIM_SETVERSION = 0x00000004,
         }
-        public enum NotifyFlag
+        public enum NIF_NotifyFlag
         {
             NIF_MESSAGE  = 0x00000001,
             NIF_ICON     = 0x00000002,
@@ -42,7 +42,7 @@ namespace JxCode.Windows.Native
             public DWORD cbSize; 
             public IntPtr hWnd;
             public UINT uID;
-            public NotifyFlag uFlags;
+            public NIF_NotifyFlag uFlags;
             public UINT uCallbackMessage;
             public IntPtr hIcon;
 
