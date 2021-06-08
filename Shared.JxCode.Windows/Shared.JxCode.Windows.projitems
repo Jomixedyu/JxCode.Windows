@@ -23,7 +23,6 @@
     <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\WSEX_ExtendedWindowStyle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Native\User32Enum\WS_WindowStyle.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Native\Winmm.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Hook.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)IniHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)KeyboardUtil.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)MCIPlayer.cs" />
