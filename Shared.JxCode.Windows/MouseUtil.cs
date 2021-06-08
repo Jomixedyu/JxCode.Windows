@@ -36,11 +36,6 @@ namespace JxCode.Windows
             User32.mouse_event(MouseEventType.MOUSEEVENTF_WHEEL, 0, 0, count, 0);
         }
 
-        public static void MoveTo(User32.Point pos, float speed)
-        {
-
-        }
-
         public static User32.Point GetMousePosition()
         {
             User32.Point p = new User32.Point();

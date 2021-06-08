@@ -110,14 +110,6 @@ namespace JxCode.Windows
             }
         }
 
-        //public bool IsAcceptMessage
-        //{
-        //    get
-        //    {
-                
-        //    }
-        //}
-
         /// <summary>
         /// 窗体实际大小同步至本类数据
         /// </summary>
@@ -411,5 +403,21 @@ namespace JxCode.Windows
             return new WindowsForm(User32.GetActiveWindow());
         }
         #endregion
+        public override int GetHashCode()
+        {
+            int hashCode = -1877228240;
+            hashCode = hashCode * -1521134295 + this.hWnd.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.HWND.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.topPos.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.position.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.size.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.Size.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.Position.GetHashCode();
+            hashCode = hashCode * -1521134295 + this.Parent.GetHashCode();
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(this.Title);
+            hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(this.ClassName);
+            return hashCode;
+        }
+        
     }
 }
