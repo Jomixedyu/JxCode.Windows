@@ -88,12 +88,28 @@ namespace JxCode.Windows
 
             return ofn;
         }
+        /// <summary>
+        /// 打开文件对话框
+        /// </summary>
+        /// <param name="dirPath"></param>
+        /// <param name="filter"></param>
+        /// <param name="title"></param>
+        /// <param name="defaultFilename"></param>
+        /// <returns>打开的文件名，如果取消则为null</returns>
         public static string OpenFileDialog(string dirPath, string filter, string title = "OpenFileDialog", string defaultFilename = "")
         {
             OPENFILENAME ofn = GetOFN(dirPath, filter, title, defaultFilename);
             int result = GetOpenFileName(ref ofn);
             return result > 0 ? ofn.lpstrFile : null;
         }
+        /// <summary>
+        /// 保存文件的对话框
+        /// </summary>
+        /// <param name="dirPath"></param>
+        /// <param name="filter"></param>
+        /// <param name="title"></param>
+        /// <param name="defaultFilename"></param>
+        /// <returns>保存的文件名，如果取消则为null</returns>
         public static string SaveFileDialog(string dirPath,
             string filter = "All(*.*)|*.*",
             string title = "SaveFileDialog",
