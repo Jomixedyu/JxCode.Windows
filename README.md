@@ -8,6 +8,7 @@
 ## Contents
 - [JxCode.Windows](#jxcodewindows)
   - [Contents](#contents)
+  - [如何使用](#如何使用)
   - [Win32API](#win32api)
   - [App](#app)
   - [FileDialog](#filedialog)
@@ -22,7 +23,9 @@
   - [简洁的注册表配置工具类](#简洁的注册表配置工具类)
   - [拓展工具](#拓展工具)
 
-
+## 如何使用
+1. 直接将`Shared.JxCode.Windows`添加至项目。
+2. 使用`JxCode.Windows`编译成dll后，添加至项目。
 
 ## Win32API
 封装了一些常用的API以及Enum。API来源于：
