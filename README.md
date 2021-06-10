@@ -1,7 +1,7 @@
 # JxCode.Windows
-![](https://img.shields.io/github/license/Jayshonyves/JxCode.Windows?style=for-the-badge)
-![](https://img.shields.io/github/v/release/Jayshonyves/JxCode.Windows?style=for-the-badge)
-![](https://img.shields.io/github/release-date/Jayshonyves/JxCode.Windows?style=for-the-badge)
+![](https://img.shields.io/github/license/JomiXedYu/JxCode.Windows?style=for-the-badge)
+![](https://img.shields.io/github/v/release/JomiXedYu/JxCode.Windows?style=for-the-badge)
+![](https://img.shields.io/github/release-date/JomiXedYu/JxCode.Windows?style=for-the-badge)
 
 基于Win32API编写的C#windows操作类库。拥有窗体控制、鼠标键盘的模拟、托盘等工具，可以使用在控制台、链接库、以及Unity等windows平台的框架下。 
 
