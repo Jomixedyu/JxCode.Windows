@@ -24,8 +24,8 @@
   - [拓展工具](#拓展工具)
 
 ## 如何使用
-1. 直接将`Shared.JxCode.Windows`添加至项目。
-2. 使用`JxCode.Windows`编译成dll后，添加至项目。
+- 直接将`Shared.JxCode.Windows`共享项目添加至解决方案并引用。
+- 将`JxCode.Windows`项目编译成dll后，在项目中引用。
 
 ## Win32API
 封装了一些常用的API以及Enum。API来源于：
