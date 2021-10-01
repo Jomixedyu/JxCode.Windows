@@ -10,22 +10,33 @@ namespace JxCode.Windows
         private string filepath = string.Empty;
         public string FilePath => filepath;
 
-        private Dictionary<string, INISection> sections;
-
-        public INISection this[string sectionName] => this.sections[sectionName];
+        public INISection this[string sectionName]
+        {
+            get
+            {
+                return new INISection(this, sectionName);
+            }
+        }
 
         public INIFile(string filepath)
         {
             this.filepath = filepath;
-            this.sections = new Dictionary<string, INISection>();
         }
-        public INISection AddSection(string name)
+
+        public INISection GetSection(string name) => this[name];
+
+        public void SetValue(string sectionName, string key, object value)
         {
-            var s = new INISection(this, name);
-            this.sections.Add(name, s);
+            Kernel32.WritePrivateProfileString(sectionName, key, value.ToString(), FilePath);
+        }
+        public string GetValue(string sectionName, string key)
+        {
+            byte[] buf = new byte[255];
+            Kernel32.GetPrivateProfileString(sectionName, key, string.Empty, buf, 255, FilePath);
+            string s = Encoding.GetEncoding(0).GetString(buf);
+            s = s.Substring(0, buf.Length);
             return s;
         }
-        public INISection GetSection(string name) => this[name];
     }
 
     public sealed class INISection
@@ -41,15 +52,11 @@ namespace JxCode.Windows
 
         public void SetValue(string key, object value)
         {
-            Kernel32.WritePrivateProfileString(sectionName, key, value.ToString(), parent.FilePath);
+            this.parent.SetValue(sectionName, key, value);
         }
         public string GetValue(string key)
         {
-            byte[] buf = new byte[255];
-            Kernel32.GetPrivateProfileString(this.sectionName, key, string.Empty, buf, 255, this.parent.FilePath);
-            string s = Encoding.GetEncoding(0).GetString(buf);
-            s = s.Substring(0, buf.Length);
-            return s;
+            return this.parent.GetValue(sectionName, key);
         }
         
     }
