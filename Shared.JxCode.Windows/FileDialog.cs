@@ -5,7 +5,7 @@ using System.Text;
 
 namespace JxCode.Windows
 {
-    public class FileDialog
+    public static class FileDialog
     {
         private const string DLL_NAME = "comdlg32.dll";
         #region nativeDefine
@@ -96,7 +96,11 @@ namespace JxCode.Windows
         /// <param name="title"></param>
         /// <param name="defaultFilename"></param>
         /// <returns>打开的文件名，如果取消则为null</returns>
-        public static string OpenFileDialog(string dirPath, string filter, string title = "OpenFileDialog", string defaultFilename = "")
+        public static string OpenFileDialog(
+            string dirPath,
+            string filter,
+            string title = "OpenFileDialog",
+            string defaultFilename = "")
         {
             OPENFILENAME ofn = GetOFN(dirPath, filter, title, defaultFilename);
             int result = GetOpenFileName(ref ofn);
