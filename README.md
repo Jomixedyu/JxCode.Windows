@@ -10,9 +10,9 @@
   - [Contents](#contents)
   - [如何使用](#如何使用)
   - [Win32API](#win32api)
+  - [WindowsForm](#windowsform)
   - [App](#app)
   - [FileDialog](#filedialog)
-  - [WindowsForm *](#windowsform-)
   - [INI配置文件读写](#ini配置文件读写)
   - [KeyboardUtil](#keyboardutil)
   - [MCIPlayer](#mciplayer)
@@ -20,7 +20,7 @@
   - [MouseUtil](#mouseutil)
   - [NotifyIcon](#notifyicon)
   - [ProcessHandle](#processhandle)
-  - [简洁的注册表配置工具类](#简洁的注册表配置工具类)
+  - [RegeditConfiguration](#RegeditConfiguration)
   - [拓展工具](#拓展工具)
 
 ## 如何使用
@@ -33,37 +33,12 @@
 - Shell32
 - User32
 - Winmm
+- comdlg32
 
 可以在Native文件夹中找到，命名空间为`JxCode.Windows.Native`。
 
-## App
-可以获取一个程序运行时的一些状态。
-- Path : 程序运行的工作路径
-- BasePath : 程序所在路径
-- FullPath : Exe的完整路径
-- EXEName : Exe的名字（不含扩展名）
-- PrevInstance : 是否有程序实例在运行
-
-## FileDialog
-使用`comdlg32`导入api，封装后只对外暴露两个方法：
-```C#
-public static string OpenFileDialog(
-    string dirPath, 
-    string filter,
-    string title = "OpenFileDialog",
-    string defaultFilename = "");
-```
-```C#
-public static string SaveFileDialog(
-    string dirPath,
-    string filter = "All(*.*)|*.*",
-    string title = "SaveFileDialog",
-    string defaultFilename = "")
-```
-它们都返回一个string，如果打开/保存成功，返回文件完整路径，否则为null。  
-
-## WindowsForm *
-实现了一些Windows窗体控制与模拟的函数
+## WindowsForm
+封装了窗体为WindowsForm对象，实现了一些Windows窗体控制与模拟的函数
 - 获取窗体句柄
 - 设置获取窗体标题
 - 设置获取窗体类名
@@ -82,10 +57,36 @@ public static string SaveFileDialog(
 - 从一个句柄创建
 - 搜寻一个窗口标题创建
 - 使用一个坐标来创建
-- 从当前鼠标位置的窗体创建
+- 从当前鼠标位置指向的窗体创建
 - 从PID创建
 - 从当前程序的PID创建
 - 从调用线程的活动窗口创建
+
+## App
+可以获取一个程序运行时的一些基础状态。
+- Path : 程序运行的工作路径
+- BasePath : 程序所在路径
+- FullPath : Exe的完整路径
+- EXEName : Exe的名字（不含扩展名）
+- PrevInstance : 是否有程序实例在运行
+
+## FileDialog
+打开文件与保存文件对话框，使用`comdlg32`导入api，封装后只对外暴露两个方法：
+```C#
+public static string OpenFileDialog(
+    string dirPath, 
+    string filter,
+    string title = "OpenFileDialog",
+    string defaultFilename = "");
+```
+```C#
+public static string SaveFileDialog(
+    string dirPath,
+    string filter = "All(*.*)|*.*",
+    string title = "SaveFileDialog",
+    string defaultFilename = "")
+```
+它们都返回一个string，如果打开/保存成功，返回文件完整路径，否则为null。  
 
 
 ## INI配置文件读写
@@ -93,17 +94,31 @@ IniHelper文件中有两个类，分别是：
 - INIFile
 - INISection
 
-使用INIFile时并不会对文件进行读写，而是通过INISection修改时读写文件。  
-INISection应只使用INIFile来创建和获取。
+在`JxCode.Windows.Native`导入了API，并封装了`Kernel32.WritePrivateProfileString`和`Kernel32.GetPrivateProfileString`。
+
+使用构造`public INIFile(string filepath)`创建INI对象。
+```C#
+INIFile inifile = new INIFile("a.ini");
+INISection section = inifile["section"];
+section.SetValue("k","v");
+string v = section.GetValue("k");
+```
 
 ## KeyboardUtil
 键盘模拟
+```C#
+KeyboardUtil.Click(JxCode.Windows.Native.User32.VK_Keys.VK_W);
+```
+模拟`W`键按下
 
 ## MCIPlayer
 使用MCI来播放音频或者视频
 
 ## MessageBox
 使用`User32`中导出的函数，还原了`MessageBox`, `MessageBoxButtons`, `DialogResult`。
+```C#
+DialogResult r = MessageBox.Show("text", "caption", MessageBoxButtons.OkCancel);
+```
 
 ## MouseUtil
 - 获取与设置鼠标位置
@@ -115,7 +130,10 @@ INISection应只使用INIFile来创建和获取。
 ## ProcessHandle
 运行程序的一个句柄，可以方便的重定向输入输出流，设置程序响应与结束的回调，或终结程序。
 
-## 简洁的注册表配置工具类
+## RegeditConfiguration
+快速简洁的注册表配置工具类  
+注册表的位置在`HKCU/Software/当前执行的程序集名字`。
+
 ```C#
 static string GetSetting(
     string key, 
