@@ -3,7 +3,7 @@
 ![](https://img.shields.io/github/v/release/JomiXedYu/JxCode.Windows?style=for-the-badge)
 ![](https://img.shields.io/github/release-date/JomiXedYu/JxCode.Windows?style=for-the-badge)
 
-基于Win32API编写的C#windows操作类库。拥有窗体控制、鼠标键盘的模拟、托盘等工具，可以使用在控制台、链接库、以及Unity等windows平台的框架下。 
+基于Win32API编写的C#windows操作类库。拥有窗体控制、鼠标键盘的模拟、任务栏进度条、托盘等工具，可以使用在控制台、链接库、以及Unity等windows平台的框架下。 
 
 ## Contents
 - [JxCode.Windows](#jxcodewindows)
@@ -17,6 +17,7 @@
   - [KeyboardUtil](#keyboardutil)
   - [MCIPlayer](#mciplayer)
   - [MessageBox](#messagebox)
+  - [TaskbarProgress](#TaskbarProgress)
   - [MouseUtil](#mouseutil)
   - [NotifyIcon](#notifyicon)
   - [ProcessHandle](#processhandle)
@@ -121,6 +122,15 @@ KeyboardUtil.Click(JxCode.Windows.Native.User32.VK_Keys.VK_W);
 使用`User32`中导出的函数，还原了`MessageBox`, `MessageBoxButtons`, `DialogResult`。
 ```C#
 DialogResult r = MessageBox.Show("text", "caption", MessageBoxButtons.OkCancel);
+```
+
+## TaskbarProgress
+设置windows任务栏进度条的状态的进度。  
+可以使用WindowsForm类中函数，从当前进程中获取窗体对象。
+```C#
+var wf = WindowsForm.CreateFromCurrentPid();
+TaskbarProgress.SetState(wf, TaskbarProgress.TaskbarStates.Normal);
+TaskbarProgress.SetValue(wf, 50, 100);
 ```
 
 ## MouseUtil
