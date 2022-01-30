@@ -418,6 +418,19 @@ namespace JxCode.Windows
             hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(this.ClassName);
             return hashCode;
         }
-        
+
+        public override string ToString()
+        {
+            return this.hWnd.ToString();
+        }
+
+        public static implicit operator IntPtr(WindowsForm form)
+        {
+            return form.HWND;
+        }
+        public static implicit operator WindowsForm(IntPtr ptr)
+        {
+            return WindowsForm.CreateFromHWND(ptr);
+        }
     }
 }
