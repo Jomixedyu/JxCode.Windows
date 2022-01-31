@@ -1,5 +1,4 @@
 .vs/
 JxCode.Windows/bin
 JxCode.Windows/obj
-Test/bin
-Test/obj
+Test
